@@ -1,4 +1,4 @@
-customtkinter
-cryptography
-psutil
-pyarmor
+customtkinter==5.2.2
+cryptography==45.0.5
+psutil==7.0.0
+pyarmor==9.1.7
