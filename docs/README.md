@@ -46,7 +46,7 @@ A professional, secure file transfer application with multi-antivirus security s
 
 ### 🔧 System Requirements
 - **Operating System**: Windows 10/11, macOS 10.14+, or Linux
-- **Python**: 3.11 
+- **Python**: 3.11.9
 - **Memory**: 100MB RAM minimum
 - **Storage**: Less than 50MB disk space
 - **Network**: Local network access
@@ -280,7 +280,7 @@ secure-file-transfer/
 - ✅ Try manual trust first to test connectivity
 
 **❌ "Application won't start"**
-- ✅ Install Python 3.8+ and required packages
+- ✅ Install Python 3.11.9 and required packages
 - ✅ Check if all files are in correct locations
 - ✅ Try running from command line to see error messages
 - ✅ Ensure antivirus isn't blocking the application
