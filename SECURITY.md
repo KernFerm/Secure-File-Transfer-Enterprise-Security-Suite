@@ -8,3 +8,5 @@ currently being supported with security updates.
 | Version | Supported          |
 | ------- | ------------------ |
 | 2.0.0   | :white_check_mark: |
+
+[securitygithubissue@fnbubbles420.org](mailto:securitygithubissue@fnbubbles420.org)
