@@ -1,4 +1,4 @@
 customtkinter==5.2.2
-cryptography==45.0.7
+cryptography==46.0.1
 psutil==7.0.0
 pyarmor==9.1.9
