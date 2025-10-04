@@ -56,7 +56,7 @@ A professional, secure file transfer application with multi-antivirus security s
 1. **Download** the application files to your computer
 2. **Install Python dependencies**:
    ```bash
-   pip install customtkinter cryptography psutil
+   pip install customtkinter==5.2.2 cryptography==46.0.2 psutil==7.1.0 pyarmor==9.1.9
    ```
 3. **Run the application**:
    - **Easy Way**: Run `python launchers/launcher.py`
@@ -378,3 +378,4 @@ This will verify:
 ---
 
 *Need help? Check the troubleshooting section above or use the built-in "Report Bug" feature to generate detailed system information.*
+
