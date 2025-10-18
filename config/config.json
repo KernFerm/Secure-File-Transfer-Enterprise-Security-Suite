@@ -1,7 +1,7 @@
 {
     "app_settings": {
         "app_name": "Secure File Transfer",
-        "version": "2.0.0",
+        "version": "3.4.01c34",
         "port": 12345,
         "encryption_enabled": true,
         "auto_accept_trusted": true,
