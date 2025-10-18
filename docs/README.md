@@ -1,12 +1,44 @@
-# 🔐 Secure-File-Transfer-Enterprise-Security-Suite
+# 🔐 Secure File Transfer - Enterprise Security Suite v3.4.01c34
 
-A professional, secure file transfer application with multi-antivirus security support and enterprise-grade trusted device management. Features a modern CustomTkinter interface with automatic device discovery and comprehensive security features.
+[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-3.4.01c34-brightgreen.svg)](CHANGELOG.md)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](README.md)
+[![Security](https://img.shields.io/badge/security-enterprise%20grade-red.svg)](README.md#security--privacy)
+[![Network](https://img.shields.io/badge/network-intelligent%20discovery-orange.svg)](README.md#enhanced-network-discovery)
+[![Encryption](https://img.shields.io/badge/encryption-Fernet%20AES-blue.svg)](README.md#advanced-security-features)
+[![GUI](https://img.shields.io/badge/GUI-CustomTkinter-purple.svg)](README.md#modern-user-interface)
+[![Status](https://img.shields.io/badge/status-production%20ready-success.svg)](README.md)
 
-## ✨ What Makes This Special
+A professional, secure file transfer application with **enhanced network discovery**, multi-antivirus security support, and enterprise-grade trusted device management. Features intelligent device naming, real-time network scanning, and a modern CustomTkinter interface with comprehensive security features.
 
-### 🛡️ Multi-Antivirus Protection
+## ✨ What's New in v3.4.01c34
+
+### 🚀 **Enhanced Network Discovery**
+- **Smart Device Naming**: Real hostname detection with intelligent fallbacks
+  - `DESKTOP-ABC123` - Your actual computer names when available
+  - `Main-Router` - Primary network gateway (.1 addresses)
+  - `Workstation-114` - Desktop/laptop computers (100-150 range)
+  - `Infrastructure-41` - Network equipment (11-50 range)
+  - `Server-156` - Server devices (151-199 range)
+  - `Mobile-Device-201` - Mobile/IoT devices (200-254 range)
+
+- **Multi-Method Discovery**: 
+  - **DNS Reverse Lookup**: Finds real computer names like "DESKTOP-ABC123"
+  - **NetBIOS Queries**: Windows computer name resolution
+  - **ARP Table Scanning**: Pre-discovery of active devices
+  - **Port Detection**: Smart device classification by open services
+  - **Ping + Port Scanning**: Combined reachability testing
+
+- **Optimized Performance**:
+  - **500ms timeouts** for DNS/NetBIOS (balanced speed vs accuracy)
+  - **No hanging** during network scans
+  - **Intelligent caching** of discovered devices
+  - **Real-time updates** as devices come online
+
+### 🛡️ **Multi-Antivirus Protection**
 - **ESET Integration**: Primary security service with enhanced protection
-- **Kaspersky Support**: Full compatibility and real-time protection
+- **Kaspersky Support**: Full compatibility and real-time protection  
 - **Norton Security**: Complete enterprise security integration
 - **Windows Defender**: Built-in Windows protection support
 - **Bitdefender**: Professional antivirus integration
@@ -14,368 +46,448 @@ A professional, secure file transfer application with multi-antivirus security s
 - **McAfee**: Enterprise security compatibility
 - **Auto-Detection**: Automatically detects your security software
 
-### 🤖 Smart Auto-Discovery
+### 🤖 **Smart Auto-Discovery**
 - **Background Scanning**: Continuously finds new devices on your network
 - **Auto-Trust Patterns**: Automatically trusts devices matching your rules
 - **Smart Caching**: Remembers devices to reduce network load
 - **Real-time Updates**: Live device status and connection monitoring
-- **Configurable**: Set scan intervals from 10 seconds to 5 minutes
+- **Configurable Intervals**: Set scan intervals from 10 seconds to 5 minutes
 
-### 🔐 Advanced Security Features
+### 🔐 **Advanced Security Features**
+- **Zero-Trust Model**: All devices start as "Untrusted" by default
 - **Trust Levels**: Limited, Standard, and High security levels
 - **Device Certificates**: Automatic certificate generation with expiration
-- **Encryption**: Industry-standard Fernet encryption for all transfers
+- **Fernet Encryption**: Industry-standard encryption for all transfers
 - **Input Validation**: Comprehensive protection against malicious inputs
 - **File Integrity**: MD5 hash verification for all file transfers
 
-### 📁 Universal File Support
+### 📁 **Universal File Support**
 - **All File Types**: Transfer any file format without restrictions (.exe, .pdf, .mp4, etc.)
-- **Large File Support**: Configurable file size limits up to GB scale
+- **Large File Support**: Configurable file size limits up to GB scale (default: 2GB)
 - **Smart Validation**: Automatic file size checking with clear error messages
 - **Flexible Limits**: Easily adjust maximum file sizes through configuration
 - **Type Categories**: Helpful file type suggestions in selection dialog
 
-### 📱 Modern User Interface
+### 📱 **Modern User Interface**
 - **Dark Theme**: Professional CustomTkinter interface
 - **Tabbed Design**: Send, Receive, Trusted Devices, and Security tabs
+- **Real-time Device List**: Live updates of network devices with meaningful names
 - **Progress Tracking**: Real-time progress bars and status updates
-- **Keyboard Shortcuts**: Quick access to common functions
 - **Responsive Design**: Works on different screen sizes
 
-## � Getting Started
+## 🔍 How Network Discovery Works
+
+### **Device Detection Process**
+1. **ARP Table Scan**: Quickly finds active devices from system ARP cache
+2. **Reachability Test**: Ping + port scan to confirm device availability
+3. **Name Resolution**: Multi-method hostname discovery
+4. **Service Detection**: Check for file transfer service on port 12345
+5. **Smart Classification**: Categorize device based on IP and discovered services
+
+### **Device Naming Intelligence**
+```
+10.0.0.1   → Main-Router        (Primary gateway)
+10.0.0.2   → Modem-Router       (Secondary gateway) 
+10.0.0.41  → Infrastructure-41  (Network equipment)
+10.0.0.103 → DESKTOP-ABC123    (Real computer name found)
+10.0.0.114 → Workstation-114   (Desktop computer)
+10.0.0.156 → Server-156        (Server device)
+10.0.0.201 → Mobile-Device-201 (Mobile/IoT device)
+```
+
+### **Trust Status Explained**
+- **🔴 Untrusted**: Device discovered but not approved (security default)
+- **✅ Trusted**: Device manually approved or auto-trusted by patterns
+- **🟢 Available**: Device is trusted and ready for file transfers
+- **⚠️ No Service**: Device found but not running file transfer service
+
+## 🚀 Getting Started
 
 ### 🔧 System Requirements
 - **Operating System**: Windows 10/11, macOS 10.14+, or Linux
-- **Python**: 3.11.9
+- **Python**: 3.11+ 
 - **Memory**: 100MB RAM minimum
 - **Storage**: Less than 50MB disk space
-- **Network**: Local network access
+- **Network**: Local network access (WiFi or Ethernet)
 
 ### 📦 Installation
 
 1. **Download** the application files to your computer
 2. **Install Python dependencies**:
    ```bash
-   pip install customtkinter==5.2.2 cryptography==46.0.2 psutil==7.1.0 pyarmor==9.1.9
+   pip install customtkinter cryptography psutil pyarmor
    ```
 3. **Run the application**:
-   - **Easy Way**: Run `python launchers/launcher.py`
-   - **Direct Way**: Run `python src/file_transfer_app.py`
+   - **Recommended**: `python launchers/launcher.py`
+   - **Direct**: `python src/file_transfer_app.py`
+   - **Executable**: Run `build_commands.bat` to create standalone .exe
 
 ### ⚙️ Configuration
 The application uses `config/config.json` for settings:
-- **File Size Limits**: Adjust `max_file_size_gb` for larger files (default: 2GB)
-- **Network Settings**: Configure port and scan timeout
-- **Security Options**: Customize trust and encryption settings
-
-### 🎯 First Time Setup
-1. **Launch** the application using any method above
-2. **Check Security Tab** to see your detected antivirus
-3. **Scan Network** to find other devices
-4. **Trust Devices** you want to allow file transfers with
-5. **Start Transferring** files securely!
-
-## � How to Use
-
-### 📤 Sending Files (Step by Step)
-
-1. **📂 Select Your Files**
-   - Click "🗂️ Select Files" button
-   - Choose one or more files from your computer (ALL file types supported)
-   - Files will appear in the list with their sizes
-   - Maximum file size: 2GB (configurable in config.json)
-
-2. **🔍 Find Devices**
-   - Click "🔍 Scan Network" to discover devices
-   - Wait for the scan to complete (usually takes 10-30 seconds)
-   - Available devices will appear in the list
-
-3. **🛡️ Trust Devices**
-   - Click "✅ Trust" next to devices you want to allow
-   - Only trusted devices can send/receive files
-   - Trusted devices get a green shield icon
-
-4. **🎯 Select Target**
-   - Click "🎯 Select" on the device you want to send to
-   - The device will be highlighted in green
-
-5. **📤 Send Files**
-   - Click "📤 Send Files" to start the transfer
-   - Watch the progress bar and transfer status
-   - Files will be encrypted and sent securely
-
-### 📥 Receiving Files (Step by Step)
-
-1. **📂 Choose Download Location**
-   - The default is your Downloads folder
-   - Click "📁 Browse" to change the location
-   - Make sure you have enough disk space
-
-2. **🟢 Start Receiver**
-   - Click "🟢 Start Receiver" to listen for incoming files
-   - The status will change to "🟢 Running"
-   - Your device is now ready to receive files
-
-3. **📋 Monitor Activity**
-   - Watch the transfer log for incoming files
-   - Files will appear in your chosen download location
-   - All transfers are logged with timestamps
-
-### 🔧 Managing Security
-
-1. **🛡️ Security Tab**
-   - View your detected antivirus software
-   - See protection status and active service
-   - Check device statistics and connection counts
-
-2. **🔍 Auto-Scan Settings**
-   - Toggle auto-scan on/off with the switch
-   - Adjust scan interval (10-300 seconds)
-   - Set up trust patterns for automatic device approval
-
-3. **🛡️ Trusted Devices Tab**
-   - View all trusted devices with detailed information
-   - Change trust levels (Limited, Standard, High)
-   - Remove devices or view their certificates
-   - Export your trusted device list
-
-### ⌨️ Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+O` | Select files |
-| `Ctrl+S` | Scan network |
-| `Ctrl+R` | Start receiver |
-| `Ctrl+T` | Stop receiver |
-| `Ctrl+D` | Open download folder |
-| `F5` | Refresh devices |
-| `F1` | Show help |
-| `Ctrl+,` | Open settings |
-
-## 🔧 Advanced Features
-
-### 🎯 Auto-Trust Patterns
-Set up rules to automatically trust devices:
-- `.*-PC$` - Trusts any device ending with "-PC"
-- `.*-LAPTOP$` - Trusts laptop devices
-- `OFFICE-.*` - Trusts devices starting with "OFFICE-"
-- `DEV-.*` - Trusts development machines
-
-### 🔐 Trust Levels Explained
-- **🔴 Limited**: Basic file transfers only
-- **🔵 Standard**: Normal file transfers with full features
-- **� High**: Maximum trust with priority handling
-
-### 📊 Device Statistics
-- **Total Devices**: Number of trusted devices
-- **Connection Count**: How many times devices have connected
-- **Auto-Trusted**: Devices automatically trusted by patterns
-- **Manual Trusted**: Devices manually approved by you
-
-### 🔒 Certificate Management
-- **Auto-Generated**: Each trusted device gets a unique certificate
-- **1-Year Validity**: Certificates expire after one year
-- **Hash Verification**: Ensures device identity hasn't changed
-- **Service Binding**: Tied to your security software
-
-## 🛠️ Settings & Configuration
-
-### � File Transfer Settings
-- **File Size Limit**: Configure maximum file size (default: 2GB)
-- **Supported Types**: All file formats supported (.exe, .pdf, .mp4, .zip, etc.)
-- **Size Validation**: Automatic checking with clear error messages
-- **Configuration File**: Edit `config/config.json` to adjust limits
-
-### �📡 Network Settings
-- **Port**: Default 12345 (configurable in config.json)
-- **Scan Timeout**: How long to wait for device responses (configurable)
-- **Max Threads**: Number of simultaneous device scans
-- **Test Connection**: Check network connectivity
-
-### 🎨 Interface Settings
-- **Appearance**: Light, Dark, or System theme
-- **Color Theme**: Blue, Green, or Dark-Blue
-- **Auto-scan**: Enable/disable background scanning
-- **Bug Reports**: Include system info in reports
-
-### 🔧 Tools & Utilities
-- **Clear Transfer Log**: Remove all transfer history
-- **Clear Temp Files**: Clean up temporary files
-- **Reset Application**: Restore default settings
-- **Export Data**: Save trusted devices and logs
-
-### ⚙️ Configuration File (config.json)
 ```json
 {
   "app_settings": {
-    "max_file_size_gb": 2,        // Maximum file size in GB
-    "port": 12345,                // Network port for transfers
-    "scan_timeout": 30,           // Device scan timeout in seconds
-    "encryption_enabled": true     // Enable file encryption
-  },
-  "security_settings": {
-    "require_device_trust": true,  // Only allow trusted devices
-    "verify_file_integrity": true // Verify file integrity
+    "version": "3.4.01c34",
+    "max_file_size_gb": 2,
+    "port": 12345,
+    "scan_timeout": 30
   }
 }
 ```
 
-**Configuration Options:**
-- **max_file_size_gb**: Set maximum file size (1-10 GB recommended)
-- **port**: Change network port if 12345 is blocked
-- **scan_timeout**: Adjust device discovery timeout
-- **encryption_enabled**: Toggle file encryption on/off
+### 🎯 First Time Setup
+1. **Launch** the application using `python launchers/launcher.py`
+2. **Scan Network** - Click "🔍 Scan Network" to discover devices
+3. **Review Devices** - See discovered devices with intelligent names
+4. **Trust Devices** - Click "✅ Trust" on devices you want to allow
+5. **Start Transferring** - Send/receive files securely!
 
-## � File Organization
+## 📖 How to Use
+
+### 📤 Sending Files (Complete Guide)
+
+1. **📂 Select Your Files**
+   - Click "🗂️ Select Files" button in the Send tab
+   - Choose one or more files (ALL file types supported: .exe, .pdf, .mp4, .zip, etc.)
+   - Files appear in the list with their sizes
+   - Maximum: 2GB per file (configurable in config.json)
+
+2. **🔍 Discover Network Devices**
+   - Click "🔍 Scan Network" to find devices
+   - Wait 10-30 seconds for comprehensive scan
+   - Devices appear with intelligent names:
+     - Real names like "OFFICE-LAPTOP" (when discoverable)
+     - Smart fallbacks like "Workstation-114", "Main-Router"
+   - Status shows: Available, Untrusted, or No Service
+
+3. **🛡️ Trust Devices (Security Step)**
+   - **Untrusted devices**: Click "✅ Trust" to approve them
+   - **Only trusted devices** can send/receive files (zero-trust security)
+   - Trusted devices show green indicators
+   - View certificates and trust levels in "Trusted Devices" tab
+
+4. **🎯 Select Target Device**
+   - Click "🎯 Select" on your target device
+   - Device highlights in green when selected
+   - Must be a trusted device with file service running
+
+5. **📤 Transfer Files**
+   - Click "📤 Send Files" to start transfer
+   - Watch progress bar and status updates
+   - Files are encrypted during transfer
+   - Completion notification appears
+
+### 📥 Receiving Files (Complete Guide)
+
+1. **📂 Set Download Location**
+   - Default: Your Downloads folder
+   - Click "📁 Browse" to choose different location
+   - Ensure sufficient disk space available
+
+2. **🟢 Start File Service**
+   - Click "🟢 Start Receiver" in Receive tab
+   - Status changes to "🟢 Running - Ready to receive files"
+   - Your device now accepts incoming transfers
+   - Other devices will see you as "Available"
+
+3. **📋 Monitor Transfers**
+   - Watch transfer log for incoming files
+   - Real-time progress updates
+   - Files automatically appear in download location
+   - All transfers logged with timestamps and source
+
+4. **🔧 Manage Service**
+   - Click "🔴 Stop Receiver" when done
+   - Service stops automatically on app close
+   - Can change download folder anytime
+
+### 🔧 Network Management
+
+1. **🔍 Device Discovery**
+   - **Manual Scan**: Click "🔍 Scan Network" anytime
+   - **Auto-Scan**: Enable in Security tab for continuous discovery
+   - **Scan Range**: Automatically detects your network (10.0.0.x, 192.168.x.x, etc.)
+   - **Multi-Method**: Uses DNS, NetBIOS, ARP, and ping for comprehensive discovery
+
+2. **🛡️ Device Security**
+   - **Trust Management**: Only trust devices you recognize
+   - **Trust Levels**: Set Limited, Standard, or High trust levels
+   - **Auto-Trust Patterns**: Set rules for automatic device approval
+   - **Certificate System**: Each device gets unique security certificate
+
+3. **📊 Monitoring**
+   - **Real-time Status**: See device connectivity in real-time  
+   - **Connection History**: Track device connection counts
+   - **Transfer Logs**: Complete history of all file transfers
+   - **Security Events**: Monitor trust changes and security events
+
+### ⌨️ Keyboard Shortcuts
+
+| Shortcut | Action | Description |
+|----------|--------|-------------|
+| `Ctrl+O` | Select Files | Open file selection dialog |
+| `Ctrl+S` | Scan Network | Start network device discovery |
+| `Ctrl+R` | Start Receiver | Begin listening for incoming files |
+| `Ctrl+T` | Stop Receiver | Stop file service |
+| `Ctrl+D` | Download Folder | Open downloads directory |
+| `F5` | Refresh | Refresh device list |
+| `F1` | Help | Show help information |
+| `Escape` | Cancel | Cancel current operation |
+
+## 🔧 Advanced Configuration
+
+### 🎯 Auto-Trust Patterns
+Set up rules to automatically trust specific devices:
+```regex
+.*-PC$          # Trusts devices ending with "-PC"
+.*-LAPTOP$      # Trusts laptop devices  
+OFFICE-.*       # Trusts devices starting with "OFFICE-"
+DEV-.*          # Trusts development machines
+[A-Z]{2,}-\d+   # Trusts pattern like "WS-01", "SRV-02"
 ```
-secure-file-transfer/
+
+### 🔐 Trust Levels
+- **🔴 Limited**: Basic transfers, lower priority
+- **🔵 Standard**: Normal transfers, standard priority  
+- **🟢 High**: Maximum trust, highest priority, auto-accept
+
+### 📊 Network Analysis
+- **Device Categories**: Routers, Workstations, Servers, Mobile devices
+- **Service Detection**: HTTP, HTTPS, SSH, SMB, RDP services
+- **Connection Methods**: Ping responsive, Port/ARP detection, File service
+- **Performance Metrics**: Scan time, success rate, device count
+
+### ⚙️ Configuration Options (config.json)
+```json
+{
+  "app_settings": {
+    "app_name": "Secure File Transfer",
+    "version": "3.4.01c34",
+    "port": 12345,
+    "max_file_size_gb": 2,
+    "scan_timeout": 30,
+    "encryption_enabled": true,
+    "auto_accept_trusted": true
+  },
+  "security_settings": {
+    "eset_integration": true,
+    "require_device_trust": true,
+    "verify_file_integrity": true,
+    "encryption_algorithm": "Fernet"
+  },
+  "network_settings": {
+    "discovery_methods": ["ping", "arp", "port_scan", "netbios"],
+    "dns_timeout": 0.5,
+    "netbios_timeout": 0.5,
+    "port_scan_timeout": 0.15
+  }
+}
+```
+
+## 🏗️ Project Structure
+```
+secure-file-transfer-v3.4.01c34/
 ├── 📁 src/
-│   ├── file_transfer_app.py      # Main application with GUI
-│   └── file_transfer_server.py   # Network server for transfers
+│   ├── file_transfer_app.py      # Main application with enhanced network discovery
+│   └── file_transfer_server.py   # Secure file transfer server
 ├── 📁 launchers/
-│   └── launcher.py              # Python launcher script
+│   └── launcher.py              # Cross-platform launcher with validation
 ├── 📁 config/
-│   └── config.json              # Application settings & file size limits
+│   └── config.json              # Application settings (v3.4.01c34)
 ├── 📁 docs/
-│   └── README.md                # This documentation
-├── trusted_devices.json         # Your trusted devices (auto-created)
-├── requirements.txt             # Python dependencies
-├── test_config.py               # Configuration test script
-└── .gitignore                   # Git ignore file
+│   └── README.md                # This comprehensive documentation
+├── trusted_devices.json         # Trusted device database (auto-created)
+├── requirements.txt             # Python dependencies  
+├── final_verification.py        # Production readiness verification
+├── test_all_features.py         # Comprehensive test suite
+├── build_commands.bat           # Windows executable builder
+├── .gitignore                   # Git ignore configuration
+└── VERIFICATION_REPORT.md       # Test results and verification
 ```
 
 ## 🆘 Troubleshooting
 
-### 🔍 Common Issues & Solutions
+### 🔍 Network Discovery Issues
 
-**❌ "No devices found"**
-- ✅ Check your network connection
-- ✅ Make sure other devices are on the same network
-- ✅ Try disabling/enabling Windows Firewall temporarily
-- ✅ Ensure port 12345 is not blocked
+**❌ "No devices found" or "Only 1-2 devices"**
+- ✅ **Check network**: Ensure you're on the same subnet (WiFi/Ethernet)
+- ✅ **Firewall**: Temporarily disable Windows Firewall to test
+- ✅ **Network range**: Application auto-detects 10.0.0.x, 192.168.x.x ranges
+- ✅ **Router settings**: Some routers block device discovery
+- ✅ **Wait longer**: Network scan takes 10-30 seconds for completion
 
-**❌ "Transfer failed"**
-- ✅ Verify both devices are trusted
-- ✅ Check if receiving device has receiver running
-- ✅ Ensure sufficient disk space on receiving device
-- ✅ Check file size doesn't exceed limit (default 2GB)
-- ✅ Try restarting both applications
+**❌ "Devices show as 'Untrusted'"**
+- ✅ **This is normal**: All devices start untrusted for security
+- ✅ **Manual trust**: Click "✅ Trust" on devices you recognize
+- ✅ **Install on other PCs**: Run app on multiple computers for full functionality
+- ✅ **Start receiver**: Other devices need file service running to be "Available"
 
-**❌ "File too large"**
-- ✅ Check current file size limit in config.json
-- ✅ Increase `max_file_size_gb` value if needed
-- ✅ Restart application after changing configuration
-- ✅ Consider splitting large files into smaller parts
+**❌ "Generic device names like 'Workstation-114'"**
+- ✅ **DNS issues**: Some networks don't allow reverse DNS lookup
+- ✅ **NetBIOS disabled**: Windows may have NetBIOS over TCP/IP disabled
+- ✅ **Still functional**: Generic names don't affect file transfer functionality
+- ✅ **Network admin**: Contact IT if in corporate environment
 
-**❌ "Security service not detected"**
-- ✅ Make sure your antivirus is running
-- ✅ Check if antivirus is in silent/gaming mode
-- ✅ Try restarting the application
-- ✅ Windows Defender is always available as fallback
+### 🔧 File Transfer Issues
 
-**❌ "Auto-trust not working"**
-- ✅ Check your trust pattern syntax (use regex)
-- ✅ Ensure auto-scan is enabled
-- ✅ Verify devices match your patterns exactly
-- ✅ Try manual trust first to test connectivity
+**❌ "Transfer failed" or "Connection refused"**
+- ✅ **Receiver running**: Target device must have "Start Receiver" active
+- ✅ **Trust both ways**: Both devices must trust each other
+- ✅ **Port 12345**: Ensure port isn't blocked by firewall/antivirus
+- ✅ **Disk space**: Check available space on receiving device
+- ✅ **File size**: Ensure file doesn't exceed 2GB limit (or configured limit)
 
-**❌ "Application won't start"**
-- ✅ Install Python 3.11.9 and required packages
-- ✅ Check if all files are in correct locations
-- ✅ Try running from command line to see error messages
-- ✅ Ensure antivirus isn't blocking the application
+**❌ "File too large" error**
+- ✅ **Check config.json**: Look at "max_file_size_gb" setting
+- ✅ **Increase limit**: Change value from 2 to higher number (e.g., 5 for 5GB)
+- ✅ **Restart app**: Configuration changes require restart
+- ✅ **Split files**: Consider splitting very large files
+
+**❌ "Security service not detected"**  
+- ✅ **Not critical**: Application works without antivirus detection
+- ✅ **Windows Defender**: Always available as fallback
+- ✅ **Antivirus running**: Ensure your security software is active
+- ✅ **Silent mode**: Check if antivirus is in gaming/silent mode
+
+### 🔧 Performance Optimization
+
+**🚀 Speed up network discovery:**
+- Use wired Ethernet connection instead of WiFi
+- Ensure good signal strength for WiFi connections
+- Close unnecessary network applications
+- Restart router if discovery is very slow
+
+**🚀 Speed up file transfers:**
+- Use wired connections for both devices
+- Close bandwidth-intensive applications
+- Transfer during off-peak network hours
+- Consider file compression for text/document files
+
+**🚀 Reduce resource usage:**
+- Disable auto-scan when not needed
+- Close other Python applications
+- Ensure sufficient RAM available
+- Use SSD storage for better I/O performance
 
 ### 🐛 Getting Help
 
-1. **📋 Check Transfer Log**: Look for error messages in the log
-2. **🔧 Try Reset**: Use "Reset Application" in Tools menu
-3. **📊 System Info**: Use "Report Bug" to generate system information
-4. **💡 Feature Request**: Use "Request Feature" for suggestions
-
-### 🔧 Performance Tips
-
-- **Network Speed**: Use wired connection for faster transfers
-- **File Size**: Large files (GB scale) are fully supported
-- **File Types**: All file formats transfer equally well
-- **Configuration**: Adjust file size limits in config.json as needed
-- **Firewall**: Add application to firewall exceptions
-- **Antivirus**: Add application folder to antivirus exceptions
+1. **📋 Check Logs**: Look at transfer log and debug output in console
+2. **🔧 Reset Settings**: Use "Reset Application" in Tools menu  
+3. **📊 System Info**: Use "Report Bug" to generate diagnostic information
+4. **🧪 Run Tests**: Execute `python test_all_features.py` to verify functionality
+5. **✅ Verification**: Run `python final_verification.py` for full system check
 
 ## 🔒 Security & Privacy
 
-### 🛡️ What's Protected
-- **All file transfers** are encrypted with industry-standard encryption
-- **Device authentication** prevents unauthorized access
-- **Input validation** protects against malicious data
-- **Path protection** prevents directory traversal attacks
-- **File integrity** ensures files aren't corrupted during transfer
+### 🛡️ Security Model
+- **Zero-Trust Architecture**: No device trusted by default
+- **Fernet Encryption**: All file transfers use industry-standard encryption
+- **Local Network Only**: No internet connection required or used
+- **Certificate-Based Auth**: Unique certificates for each trusted device
+- **Input Validation**: Protection against path traversal and injection attacks
 
-### 🔐 Privacy Features
-- **Local network only** - no internet connection required
-- **No data collection** - all information stays on your network
-- **Trusted devices only** - you control who can send/receive
-- **Automatic cleanup** - temporary files are removed after transfer
-- **Secure certificates** - each device gets unique identification
+### 🔐 Privacy Protection  
+- **No Data Collection**: All information stays on your local network
+- **No Cloud Storage**: Files never leave your local network
+- **Trusted Devices Only**: You control exactly who can send/receive
+- **Automatic Cleanup**: Temporary files removed after transfer
+- **Audit Trail**: Complete logs of all transfer activity
 
-### 🚨 Best Practices
-- **Review trusted devices** regularly
-- **Use strong device names** (avoid generic names)
-- **Monitor transfer logs** for suspicious activity
-- **Keep security software updated**
-- **Use appropriate trust levels** for different devices
+### 🚨 Security Best Practices
+- **Review Trust List**: Regularly check trusted devices
+- **Strong Device Names**: Use descriptive, unique device names
+- **Monitor Transfers**: Watch logs for unexpected activity  
+- **Update Software**: Keep antivirus and OS updated
+- **Network Security**: Use WPA3 WiFi encryption
+- **Physical Security**: Secure devices running the application
 
-## 📝 About This Application
+## 🎯 Use Cases
 
-### 🎯 Purpose
-This application was designed to provide secure, easy-to-use file transfers on local networks with enterprise-grade security features. It's perfect for:
-- **Home networks** with multiple computers
-- **Small offices** needing secure file sharing
-- **Development teams** sharing files safely
-- **Anyone** wanting encrypted file transfers
+### 🏠 **Home Network**
+- Transfer photos/videos between family computers
+- Share documents between work laptop and personal desktop
+- Move files to/from media center or NAS
+- Backup important files to multiple devices
 
-### 🔧 Technical Details
-- **Built with Python** for cross-platform compatibility
-- **CustomTkinter UI** for modern interface
-- **Fernet encryption** for security
-- **Multi-threaded scanning** for performance
-- **JSON configuration** for easy customization
-- **Universal file support** - no file type restrictions
-- **Configurable limits** - adjust file sizes up to GB scale
+### 🏢 **Small Office** 
+- Secure document sharing between workstations
+- Transfer files to presentation/meeting room computers  
+- Share resources between departments
+- Backup files to server or storage devices
 
-### 🌟 Key Benefits
-- **Easy to use** - intuitive interface with helpful icons
-- **Secure by default** - encryption and authentication built-in
-- **Flexible** - works with any antivirus or security software
-- **Universal** - supports all file types without restrictions
-- **Scalable** - handles files up to GB scale with configurable limits
-- **Reliable** - robust error handling and recovery
-- **Professional** - enterprise-grade features in simple package
+### 💻 **Development Team**
+- Share code, builds, and assets securely
+- Transfer large development files
+- Distribute software to testing machines
+- Backup project files across team devices
+
+### 🎮 **Gaming/Media**
+- Transfer game saves between computers
+- Share media files, screenshots, recordings
+- Move large game installations
+- Backup gaming profiles and configurations
+
+## 📈 What's Coming Next
+
+### 🔮 Future Enhancements
+- **Mobile Apps**: iOS and Android companion apps
+- **Cloud Integration**: Optional secure cloud storage bridges
+- **Advanced Encryption**: Additional encryption algorithms
+- **Group Management**: Manage device groups and permissions
+- **Bandwidth Controls**: QoS and transfer rate limiting
+- **Remote Access**: Secure VPN-like connectivity
+
+### 🤝 Contributing
+- **Bug Reports**: Use built-in "Report Bug" feature
+- **Feature Requests**: Use "Request Feature" functionality  
+- **Testing**: Help test new features and report issues
+- **Documentation**: Suggest improvements to this guide
+- **Security**: Report security issues responsibly
+
+## 📝 About
+
+### 🎯 **Mission**
+To provide enterprise-grade secure file transfer capabilities in an easy-to-use application suitable for home users, small businesses, and development teams. Emphasizing security, privacy, and user experience without complexity.
+
+### 🔧 **Technical Excellence**
+- **Python-Based**: Cross-platform compatibility and reliability
+- **Modern UI**: CustomTkinter for professional appearance
+- **Multi-Threading**: Responsive interface during network operations  
+- **Robust Error Handling**: Graceful handling of network and file system issues
+- **Comprehensive Testing**: Extensive test suite ensures reliability
+- **Zero Dependencies**: Minimal external dependencies for security
+
+### 🌟 **Key Advantages**
+- **User-Friendly**: Intuitive interface with helpful tooltips and guidance
+- **Secure by Default**: Zero-trust security model with encryption
+- **Universal Compatibility**: Supports all file types and sizes
+- **Network Intelligent**: Smart device discovery and classification  
+- **Highly Configurable**: Extensive customization options
+- **Professional Grade**: Enterprise security features in simple package
 
 ---
 
 ## 🎉 Ready to Get Started?
 
-1. **Download** the application files
-2. **Install** Python dependencies: `pip install customtkinter cryptography psutil`
-3. **Test configuration** (optional): `python test_config.py`
-4. **Run** `python launchers/launcher.py`
-5. **Scan** for devices and start trusting them
-6. **Transfer** files securely - any file type, up to 2GB!
+### 🚀 **Quick Start (2 Minutes)**
 
-**🔐 Secure File Transfer** - Making secure file sharing simple and professional.
+1. **Install Python** (if not already installed)
+2. **Download** application files from GitHub
+3. **Install dependencies**: 
+   ```bash
+   pip install customtkinter cryptography psutil
+   ```
+4. **Run application**:
+   ```bash
+   python launchers/launcher.py
+   ```
+5. **Scan network** and start transferring files securely!
 
-### 🧪 Testing Your Setup
-Run the configuration test to verify everything works:
-```bash
-python test_config.py
-```
-This will verify:
-- Configuration loading (file size limits, port settings)
-- File size validation (shows current 2GB limit)
-- File type support (confirms all types are supported)
-- Network settings (port and timeout configuration)
+
+- **Read full docs**: This README covers everything you need!
 
 ---
 
-*Need help? Check the troubleshooting section above or use the built-in "Report Bug" feature to generate detailed system information.*
+**🔐 Secure File Transfer v3.4.01c34** - Professional file sharing with intelligent network discovery, enterprise security, and zero-trust architecture.
 
+*Making secure file transfers simple, intelligent, and professional for everyone.*
