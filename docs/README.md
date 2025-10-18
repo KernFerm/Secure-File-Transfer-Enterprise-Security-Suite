@@ -84,16 +84,6 @@ A professional, secure file transfer application with **enhanced network discove
 4. **Service Detection**: Check for file transfer service on port 12345
 5. **Smart Classification**: Categorize device based on IP and discovered services
 
-### **Device Naming Intelligence**
-```
-10.0.0.1   → Main-Router        (Primary gateway)
-10.0.0.2   → Modem-Router       (Secondary gateway) 
-10.0.0.41  → Infrastructure-41  (Network equipment)
-10.0.0.103 → DESKTOP-ABC123    (Real computer name found)
-10.0.0.114 → Workstation-114   (Desktop computer)
-10.0.0.156 → Server-156        (Server device)
-10.0.0.201 → Mobile-Device-201 (Mobile/IoT device)
-```
 
 ### **Trust Status Explained**
 - **🔴 Untrusted**: Device discovered but not approved (security default)
@@ -491,3 +481,4 @@ To provide enterprise-grade secure file transfer capabilities in an easy-to-use 
 **🔐 Secure File Transfer v3.4.01c34** - Professional file sharing with intelligent network discovery, enterprise security, and zero-trust architecture.
 
 *Making secure file transfers simple, intelligent, and professional for everyone.*
+
