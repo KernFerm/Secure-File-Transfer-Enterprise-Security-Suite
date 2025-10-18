@@ -126,7 +126,6 @@ A professional, secure file transfer application with **enhanced network discove
 3. **Run the application**:
    - **Recommended**: `python launchers/launcher.py`
    - **Direct**: `python src/file_transfer_app.py`
-   - **Executable**: Run `build_commands.bat` to create standalone .exe
 
 ### ⚙️ Configuration
 The application uses `config/config.json` for settings:
@@ -501,3 +500,4 @@ To provide enterprise-grade secure file transfer capabilities in an easy-to-use 
 **🔐 Secure File Transfer v3.4.01c34** - Professional file sharing with intelligent network discovery, enterprise security, and zero-trust architecture.
 
 *Making secure file transfers simple, intelligent, and professional for everyone.*
+
