@@ -148,6 +148,16 @@ The application uses `config/config.json` for settings:
 4. **Trust Devices** - Click "✅ Trust" on devices you want to allow
 5. **Start Transferring** - Send/receive files securely!
 
+### 🖥️ **IMPORTANT: Multi-Device Setup Required**
+> **⚠️ Key Requirement**: To transfer files between devices, you must install and run this application on **ALL devices** you want to include in your secure network.
+
+**Example Setup:**
+- **Device A**: Install app → Trust Device B → Send files to Device B
+- **Device B**: Install app → Trust Device A → Receive files from Device A
+- **Both devices**: Must be on the same network and trust each other
+
+**Why needed:** Each device runs its own secure file service. Without the app installed, devices cannot send or receive encrypted files.
+
 ## 📖 How to Use
 
 ### 📤 Sending Files (Complete Guide)
@@ -301,11 +311,28 @@ DEV-.*          # Trusts development machines
 - ✅ **Router settings**: Some routers block device discovery
 - ✅ **Wait longer**: Network scan takes 10-30 seconds for completion
 
+**❌ "My PC doesn't show as trusted" (Fresh Install)**
+- ✅ **This is CORRECT security behavior**: Fresh installs have zero trusted devices
+- ✅ **Expected workflow**:
+  1. Download/install application → No trusted devices (secure)
+  2. Run application and click "🔍 Scan Network"
+  3. Your PC appears as "Untrusted" (this is normal!)
+  4. Click "✅ Trust" next to your PC to approve it
+  5. Your PC now shows as trusted and ready for transfers
+- ✅ **Why this happens**: Zero-trust security model prevents auto-trust
+- ✅ **One-time setup**: You only need to trust your PC once
+
 **❌ "Devices show as 'Untrusted'"**
 - ✅ **This is normal**: All devices start untrusted for security
 - ✅ **Manual trust**: Click "✅ Trust" on devices you recognize
-- ✅ **Install on other PCs**: Run app on multiple computers for full functionality
-- ✅ **Start receiver**: Other devices need file service running to be "Available"
+- ✅ **Install on other PCs**: **CRITICAL** - Install the application on ALL devices you want to transfer files between
+- ✅ **Start receiver**: Target devices need "Start Receiver" running to be "Available"
+
+**❌ "Can't send files to other devices"**
+- ✅ **Install app everywhere**: Other devices must have this application installed and running
+- ✅ **Mutual trust required**: Both devices must trust each other (Device A trusts B, Device B trusts A)
+- ✅ **Receiver must be running**: Target device must click "🟢 Start Receiver"
+- ✅ **Same network**: All devices must be on the same WiFi/network
 
 **❌ "Generic device names like 'Workstation-114'"**
 - ✅ **DNS issues**: Some networks don't allow reverse DNS lookup
