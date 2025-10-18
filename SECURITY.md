@@ -7,10 +7,11 @@ We actively maintain security for the following versions:
 | Version | Support Status | Security Updates | End of Life |
 |---------|----------------|------------------|-------------|
 | 3.4.x   | ✅ **Current** | ✅ Active | TBD |
-| 3.3.x   | ❌ EOL            | ❌ None         | 2026-01-01  |
-| 3.2.x   | ❌ EOL            | ❌ None         | 2025-12-01  |
-| 3.1.x   | ❌ EOL            | ❌ None         | 2025-10-01  |
-| < 3.0   | ❌ EOL            | ❌ None         | 2025-06-01  |
+| 3.3.x   | ❌ EOL            | ❌ None         | 2025-07-01  |
+| 3.2.x   | ❌ EOL            | ❌ None         | 2025-07-01  |
+| 3.1.x   | ❌ EOL            | ❌ None         | 2025-07-01  |
+| < 3.0   | ❌ EOL            | ❌ None         | 2025-07-01  |
+
 
 
 **Current Production Version:** `v3.4.01c34`
