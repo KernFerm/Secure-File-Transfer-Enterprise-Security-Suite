@@ -84,6 +84,22 @@ A professional, secure file transfer application with **enhanced network discove
 4. **Service Detection**: Check for file transfer service on port 12345
 5. **Smart Classification**: Categorize device based on IP and discovered services
 
+### **Device Naming Intelligence**
+```
+192.168.1.1   → Main-Router        (Primary gateway)
+192.168.1.2   → Secondary-Router  (Secondary gateway) 
+192.168.1.41  → Infrastructure-41  (Network equipment)
+192.168.1.103 → DESKTOP-ABC123    (Real computer name found)
+192.168.1.114 → Workstation-114   (Desktop computer)
+192.168.1.156 → Server-156        (Server device)
+192.168.1.201 → Mobile-Device-201 (Mobile/IoT device)
+```
+
+**Note:** The application automatically detects your network range:
+- `192.168.1.x` (most common home networks)
+- `192.168.0.x` (alternative home networks)  
+- `10.0.0.x` (some routers and corporate networks)
+- `172.16.x.x` (corporate networks)
 
 ### **Trust Status Explained**
 - **🔴 Untrusted**: Device discovered but not approved (security default)
@@ -274,27 +290,6 @@ DEV-.*          # Trusts development machines
 }
 ```
 
-## 🏗️ Project Structure
-```
-secure-file-transfer-v3.4.01c34/
-├── 📁 src/
-│   ├── file_transfer_app.py      # Main application with enhanced network discovery
-│   └── file_transfer_server.py   # Secure file transfer server
-├── 📁 launchers/
-│   └── launcher.py              # Cross-platform launcher with validation
-├── 📁 config/
-│   └── config.json              # Application settings (v3.4.01c34)
-├── 📁 docs/
-│   └── README.md                # This comprehensive documentation
-├── trusted_devices.json         # Trusted device database (auto-created)
-├── requirements.txt             # Python dependencies  
-├── final_verification.py        # Production readiness verification
-├── test_all_features.py         # Comprehensive test suite
-├── build_commands.bat           # Windows executable builder
-├── .gitignore                   # Git ignore configuration
-└── VERIFICATION_REPORT.md       # Test results and verification
-```
-
 ## 🆘 Troubleshooting
 
 ### 🔍 Network Discovery Issues
@@ -474,11 +469,8 @@ To provide enterprise-grade secure file transfer capabilities in an easy-to-use 
 5. **Scan network** and start transferring files securely!
 
 
-- **Read full docs**: This README covers everything you need!
-
 ---
 
 **🔐 Secure File Transfer v3.4.01c34** - Professional file sharing with intelligent network discovery, enterprise security, and zero-trust architecture.
 
 *Making secure file transfers simple, intelligent, and professional for everyone.*
-
