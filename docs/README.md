@@ -1,4 +1,4 @@
-# 🔐 Secure File Transfer - Enterprise Security Suite v3.4.01c34
+# 🔐 Secure File Transfer - Enterprise Security Suite v3.4.02c36
 
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -12,7 +12,8 @@
 
 A professional, secure file transfer application with **enhanced network discovery**, multi-antivirus security support, and enterprise-grade trusted device management. Features intelligent device naming, real-time network scanning, and a modern CustomTkinter interface with comprehensive security features.
 
-## ✨ What's New in v3.4.01c34
+## ✨ What's New in v3.4.02c36
+> Some Dependency Updates
 
 ### 🚀 **Enhanced Network Discovery**
 - **Smart Device Naming**: Real hostname detection with intelligent fallbacks
